@@ -6,3 +6,4 @@ env
 poetry.lock
 .pytest_cache
 __pycache__/
+*ipynb
