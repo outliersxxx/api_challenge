@@ -1,0 +1,8 @@
+# Exclude virtual enviroments
+.venv
+venv
+env
+.env
+poetry.lock
+.pytest_cache
+__pycache__/
