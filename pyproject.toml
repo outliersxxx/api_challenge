@@ -8,9 +8,11 @@ authors = ["jose <jose.poblete€alumnos.usm.cl>"]
 python = "^3.7"
 fastapi = "^0.92.0"
 uvicorn = "^0.20.0"
+cloudpickle = "^2.2.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
+black = "^23.1.0"
 
 [tool.poetry.scripts]
 serve = "api_challenge.__main__:serve"

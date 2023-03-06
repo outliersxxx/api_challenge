@@ -10,26 +10,21 @@ from fastapi import HTTPException
 from fastapi import Path
 from fastapi import Query
 from pydantic import BaseModel
+import pandas as pd
+
+from api_challenge.read_model import MODELS
+from api_challenge.schemas import ModelInput
+from api_challenge.schemas import ModelOutput
+
 
 router = APIRouter()  # pylint: disable=invalid-name,
 
-class Josito(BaseModel):
-    name: str
-    price: float
-
-def model(price: float):
-    return 2*price
-
 
 @router.post("/predict/")
-async def predict_model(
-    josito: Josito
-):
+async def predict_model(model_input: ModelInput):
     """Predicción de modelo"""
 
-    # Logica del modelo
+    prediction = MODELS['logistic_model'](pd.DataFrame(model_input.dict()['features']))
+    prediction = [int(val) for val in prediction]
+    return {"predictions":prediction}
 
-    # Transformar josito para un input de modelo adecuado
-    prediction = model(josito.price)
-    result = {"prediction": prediction, "name": josito.name}
-    return result

@@ -5,11 +5,7 @@ from typing import Optional
 import uvicorn
 
 from api_challenge import make_app
-
-DEFAULT_UVICORN_HOST = "0.0.0.0"
-"""Setting to 0.0.0.0, means any incoming connections are acceptable."""
-
-DEFAULT_API_PORT = 5000
+from api_challenge import SETTINGS
 
 
 def serve():
@@ -19,9 +15,8 @@ def serve():
 
     uvicorn.run(
         app,
-        host=DEFAULT_UVICORN_HOST,
-        port=DEFAULT_API_PORT,
-
+        host=SETTINGS.API_HOST,
+        port=SETTINGS.API_PORT,
     )
 
 

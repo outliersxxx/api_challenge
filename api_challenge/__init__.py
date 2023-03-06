@@ -6,13 +6,16 @@ from socket import gethostname
 from fastapi import FastAPI
 from starlette.responses import RedirectResponse
 
+from api_challenge.settings import Settings
 
+SETTINGS = Settings()
 
 RUN_IDS = {
     "api_challenge.run_id": str(uuid.uuid4()),
     "api_challenge.host": gethostname(),
     "api_challenge.version": "0.1.0",
 }
+
 
 def make_app():
     """Construye aplicación FastAPI."""
@@ -31,4 +34,3 @@ def make_app():
     register_routes(app)
 
     return app
-

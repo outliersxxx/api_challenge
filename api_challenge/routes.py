@@ -15,4 +15,3 @@ def register_routes(app: FastAPI):
     }
     for version, router in routers.items():
         app.include_router(router, prefix=f"/api/{version}")
-

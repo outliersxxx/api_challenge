@@ -48,6 +48,7 @@ def register_uuid_middleware(app: FastAPI):
 
         return response
 
+
 def register_middlewares(app: FastAPI):
     """Registra varios middlewares en la aplicación."""
 
