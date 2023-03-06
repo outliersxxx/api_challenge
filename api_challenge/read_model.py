@@ -26,5 +26,8 @@ class ModelReader:
 
 MODELS = {
     "logistic_model": ModelReader("logistic_model").model,
-    #"xgboost": ModelReader("xgboost").model,
+    "xgboost_model": ModelReader("xgboost_model").model,
+    "catboost_model": ModelReader("catboost_model").model,
+    "xgboost_fI_model": ModelReader("xgboost_fI_model").model,
+    "catboost_fI_model": ModelReader("catboost_fI_model").model,
 }

@@ -2,6 +2,7 @@ import enum
 from typing import List
 from pydantic import BaseModel
 
+
 class Month(enum.Enum):
     jan = 1
     feb = 2
@@ -15,25 +16,28 @@ class Month(enum.Enum):
     oct = 10
     nov = 11
     dic = 12
-   
 
-class FlyType(str,enum.Enum):
-    national = 'N'
-    international = 'I'
+
+class FlyType(str, enum.Enum):
+    national = "N"
+    international = "I"
+
 
 class Features(BaseModel):
     OPERA: str
     TIPOVUELO: FlyType
     MES: Month
-    class Config:  
-        use_enum_values = True 
-        
-class ModelInput(BaseModel):
 
+    class Config:
+        use_enum_values = True
+
+
+class ModelInput(BaseModel):
     features: List[Features]
 
-    class Config:  
+    class Config:
         use_enum_values = True
+
 
 class ModelOutput(BaseModel):
     prediction: List[int]

@@ -21,10 +21,9 @@ router = APIRouter()  # pylint: disable=invalid-name,
 
 
 @router.post("/predict/")
-async def predict_model(model_input: ModelInput):
+async def predict_model(model_input: ModelInput, name_model: str):
     """Predicción de modelo"""
 
-    prediction = MODELS['logistic_model'](pd.DataFrame(model_input.dict()['features']))
+    prediction = MODELS[name_model](pd.DataFrame(model_input.dict()["features"]))
     prediction = [int(val) for val in prediction]
-    return {"predictions":prediction}
-
+    return {"predictions": prediction}
