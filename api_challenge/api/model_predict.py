@@ -1,14 +1,7 @@
 # -*- coding: utf-8 -*-
 """Search routes."""
 
-from textwrap import dedent as _
-from typing import Optional
-
 from fastapi import APIRouter
-from fastapi import Depends
-from fastapi import HTTPException
-from fastapi import Path
-from fastapi import Query
 from pydantic import BaseModel
 import pandas as pd
 
