@@ -1,4 +1,4 @@
-# Requerimientos
+# Requerimientos.
 
 Para la instalacion de la API se necesita Docker.
 
@@ -24,3 +24,22 @@ Esta aplicación es un *hello world* que simula un escenario real de comunicaci�
 archivo de ``requirements.txt`` que nos entrega la información del ambiente en que se puede desplegar el modelo. En un escenario
 profesional, los binarios vivirían en un Bucket (por ejemplo AWS S3) y los requerimientos serían un poco más complejos, por ejemplo,
 el ambiente del modelo podría ser un instalable python desde un artefactory propio.
+
+
+# Procedimiento.
+
+Se propuso el modelo catboost el cual no obtuvo un gran mejor resultado y tambien se dejaron los modelos previamente realizados por el notebook. Los modelos que se pueden seleccionar para predecir son los siguientes:
+
+-logistic_model
+-xgboost_model
+-catboost_model
+-xgboost_fI_model
+-catboost_fI_model
+
+El como se guardo el modelo en un objeto pickle, esta agregado en el notebook del data scientist.
+
+# Por hacer.
+
+- Pruebas de integracion/unitarias.
+- Manejos de excepciones.
+- Levantamiento de estado http statuscode
