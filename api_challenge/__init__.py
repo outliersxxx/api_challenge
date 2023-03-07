@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Administra y busca en el Catálogo Único de la Construcción®."""
+"""Setting and get up API"""
 
 import uuid
 from socket import gethostname
